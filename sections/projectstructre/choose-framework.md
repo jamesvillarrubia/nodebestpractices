@@ -30,6 +30,12 @@ Pros: When compared with express: it's Simpler and nimbler; modern API with asyn
 
 Cons: Covers a small subset of a typical application needs - leaves a handful of app concerns uncovered; Not as popular as express and Nest.js
 
+**FeathersJS**
+
+Pros: Between Nest.js and Express in terms of batteries-included. Can run on top of Koa or Express.  Almost all functionalities are optional, but comes with common capabilities like authentication, object validation, error-handling, etc..  Provides a unified, common abstraction layer over all DBs, so it is very useful if your application must talk to multiple DB engines or if you plan to transition from one DB to another in the future.  Has a CLI generator and rich plugin community.
+
+Cons: Can be more powerful, but more complex than Koa or Express by itself.  Has some conventions around "hooks" and "resolvers" that, though they simply interact with a Koa/Express Request object, can still be confusing at first.  Does not have the bells and whistles of Nest.js.
+
 ### A brief choosing guide
 
 **Prefer express.js when** - having an experienced architect onboard _and_ in a need to control the fine-grained pieces of the puzzle. In this circumstances, Koa is also a solid option with a more modern API than express but a much smaller eco-system
@@ -37,3 +43,5 @@ Cons: Covers a small subset of a typical application needs - leaves a handful of
 **Prefer Fastify when -** The app consists of reasonably-sized components/Microservices (i.e., not a huge monolith); for teams who have solid JavaScript & Node.js knowledge; when sticking to Node.js narratives and spirit is desirable
 
 **Prefer Nest.js when** - It's desirable to design and code in OOP style; when the team is highly experienced with Java/Spring/Angular or similar; for large size app that can't be broken down (i.e. monolith) to autonomous component; for a team that lacks fundamental JavaScript/Node.js skills (not exclusively, this yet another consideration); when the decision-making overhead should be minimized; when the time to the first delivery is a critical factor
+
+**Prefer FeathersJS when** - When your team is not focused on OOP and dependency injection, but needs more batteries-included than Express or Koa.  Useful for abstracting against multiple DB engines if your sub-apps talk to different domains with different DBs.  
